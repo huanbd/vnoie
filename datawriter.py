@@ -57,7 +57,8 @@ class DataWriter:
 
     def extract_SetClause(self, sentenceList):
         """ generated source for method writeFile_SetClause """
-        result=[]
+        result = []
+        resultFalse = []
         constituent = Constituent()
         setClause = SetClause()
         ClauseTypeList = []
@@ -74,18 +75,19 @@ class DataWriter:
             sentenceLine = ""
             ClauseTypeList,StatNumberList = setClause.setOfClause(sentenceList[i])
 
+            countWord = 0
+            j=0
+            while j < sentenceList[i].size():
+                sentenceLine = sentenceLine + sentenceList[i].getWordAt(j) + " "
+                if not (sentenceList[i].getDependenceTypeAt(j) == "punct"):
+                    countWord += 1
+                j += 1
+
             if (constituent.isSentence(sentenceList[i]) and (len(ClauseTypeList) > 0)):
                 countTrueSentence += 1
-                countWord = 0
-                j=0
-                while j < sentenceList[i].size():
-                    sentenceLine = sentenceLine + sentenceList[i].getWordAt(j) + " "
-                    if not (sentenceList[i].getDependenceTypeAt(j) == "punct"):
-                        countWord += 1
-                    j += 1
-                
             else:
                 countFalseSentence += 1
+                resultFalse.append(sentenceLine)
             
             if (len(ClauseTypeList)) and constituent.isSentence(sentenceList[i]):
                 strVerbNumber = StatNumberList[0].split("\t")
@@ -108,9 +110,10 @@ class DataWriter:
                         k += 1
                     result.append(temp)
             
-            print(StatNumberList[0])
-            print(StatNumberList[1])
-            print("\n")
+            if (len(StatNumberList)):
+                print(StatNumberList[0])
+                print(StatNumberList[1])
+                print("\n")
             i += 1
         
         
@@ -118,7 +121,7 @@ class DataWriter:
         print("The total number of sentences has in: \t" + str(len(sentenceList)))
         print("The total number of sentences are true: \t" + str(countTrueSentence))
         print("The total number of sentences are false: \t" + str(countFalseSentence))
-        return result
+        return result,resultFalse
 
     # 
     # 	 *  function main use to read data file and write into a List

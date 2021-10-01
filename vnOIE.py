@@ -10,9 +10,9 @@ class vnOIE:
         
         sentenceList = Writer.extract_Sentence(dataList)
 
-        result = Writer.extract_SetClause(sentenceList)
+        result,resultFalse = Writer.extract_SetClause(sentenceList)
 
-        return result
+        return result,resultFalse
 
     def main():
         Writer = DataWriter()
