@@ -1,0 +1,7 @@
+1	1	1: Chiến_sĩ công_an , bộ_đội đỡ_đẻ cho thai_phụ ngay trên vỉa_hè . 	9
+2	1	SVO:("Chiến_sĩ công_an , bộ_đội", "đỡ_đẻ", "cho thai_phụ")
+3	1	SVOA:("Chiến_sĩ công_an , bộ_đội", "đỡ_đẻ", "cho thai_phụ", "ngay trên vỉa_hè")
+4	1	Total verb number of a sentence: 		1
+5	1	Total clause number of a sentence: 			2
+
+Total sentence number in file: 	1

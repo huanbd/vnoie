@@ -1,0 +1,14 @@
+1	Chiến_sĩ	_	_	N	_	5	sub	_	_
+2	công_an	_	_	N	_	1	nmod	_	_
+3	,	_	_	CH	_	1	punct	_	_
+4	bộ_đội	_	_	N	_	1	nmod	_	_
+5	đỡ_đẻ	_	_	V	_	0	root	_	_
+6	cho	_	_	E	_	5	vmod	_	_
+7	thai_phụ	_	_	N	_	6	pob	_	_
+8	ngay	_	_	T	_	9	dep	_	_
+9	trên	_	_	E	_	5	loc	_	_
+10	vỉa_hè	_	_	N	_	9	pob	_	_
+11	.	_	_	CH	_	5	punct	_	_
+
+1	Sàng_lọc	_	V	V	_	0	root	_	_
+2	.	_	.	.	_	1	punct	_	_
