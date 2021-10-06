@@ -592,7 +592,7 @@ class Constituent:
         id = int()
         relationId = int()
         i = 0
-        while i < len(sentence):
+        while i < sentence.size():
             if sentence.get(i).getId() == (kwVerb.getId()) and (self.isRootVerb(sentence.get(i).getDependenceId(), sentence) or self.isVerb(sentence.get(i), sentence)):
                 if (2 == len(sentence.get(i).getId())) and (sentence.get(i).getId()[0] == 65279) and (sentence.get(i).getId()[1] == '1'):
                     id = (sentence.get(i).getId()[1] - '0')
@@ -615,7 +615,7 @@ class Constituent:
         id = int()
         relationId = int()
         i = 0
-        while i < len(sentence):
+        while i < sentence.size():
             if sentence.get(i).getId()==(kwCoord.getId()):
                 if (2 == len(sentence.get(i).getId())) and (sentence.get(i).getId()[0] == 65279) and (sentence.get(i).getId()[1] == '1'):
                     id = (sentence.get(i).getId()[1] - '0')
